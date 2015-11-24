@@ -53,11 +53,16 @@ $(function () {
     console.log('Connected!');
   });
 
+
+  var maxAppend = 0;
   socket.on('tweets', function(tweet) {
-    var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div>';
+    if (maxAppend >= 15) return;
+    var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span> </div></div></div>';
+    // <span class="text">' + tweet.location + '</span>
+    maxAppend++;
     $('#tweet-container').prepend(html);
 
-    //GOOGLE GLOBE MARKERS
+    // GOOGLE GLOBE MARKERS
     // globe.addData( data[i][1], {format: 'magnitude', name: data[i][0]} )
     // globe.addData([tweet.location.lat, tweet.location.lng, 0.02, 0x00FF66], { format: 'magnitude', name: 'twitter'})
     // globe.createPoints()
@@ -70,6 +75,8 @@ $(function () {
     socket.emit('updateTerm', search_term);
     console.log('emitting search')
   });
+
+
 
   socket.on('updatedTerm', function(searchTerm) {
     $('h1').text("Twitter Search for "+ searchTerm);

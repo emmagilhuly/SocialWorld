@@ -95,15 +95,15 @@ io.on('connect', function(socket){
     }
   stream = twitter.stream('statuses/filter', {track: searchTerm, language: 'en'}, {locations:[-180,-90,180,90]});
   stream.on('tweet', function(tweet){
-		if (tweet.coordinates){
+		// if (tweet.coordinates){
 		  var data = {};
 		    data.name = tweet.user.name;
 		    data.screen_name = tweet.user.screen_name;
 		    data.text = tweet.text;
 		    data.user_profile_image = tweet.user.profile_image_url;
-				data.location = {"lat": tweet.coordinates.coordinates[0],"lng": tweet.coordinates.coordinates[1]}
+				// data.location = {"lat": tweet.coordinates.coordinates[0],"lng": tweet.coordinates.coordinates[1]}
 		    socket.emit('tweets', data);
-		}
+		// }
   });
 });
 });
