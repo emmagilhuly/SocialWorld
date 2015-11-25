@@ -8,7 +8,7 @@ userRoutes.route('/login')
         res.render('login', {message: req.flash('loginMessage')})
     })
     .post(passport.authenticate('local-login', {
-    successRedirect: '/profile',
+    successRedirect: '/',
     failureRedirect: '/login'
     }))
 
@@ -18,14 +18,14 @@ userRoutes.route('/signup')
         res.render('signup')
     })
     .post(passport.authenticate('local-signup', {
-        successRedirect: '/profile',
+        successRedirect: '/',
         failureRedirect: '/signup'
     }))
 
 userRoutes.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}))
 
 userRoutes.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/profile',
+    successRedirect: '/',
     failureRedirect: '/'
 }))
 
