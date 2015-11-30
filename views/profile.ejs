@@ -10,20 +10,20 @@
 
                 <h3>Facebook</h3>
                 <p>
-                    <strong>id</strong>: <%= user.facebook.id %><br>
-                    <strong>token</strong>: <%= user.facebook.token %><br>
-                    <strong>email</strong>: <%= user.facebook.email %><br>
-                    <strong>name</strong>: <%= user.facebook.name %>
+                    <!-- <strong>id</strong>: <%= user.facebook.id %><br> -->
+                    <!-- <strong>token</strong>: <%= user.facebook.token %><br> -->
+                    <strong>Name</strong>: <%= user.facebook.name %>
+                    <strong>Email</strong>: <%= user.facebook.email %><br>
                 </p>
 
             <% } else { %>
 
             <h3>Locally Stored User</h3>
                 <p>
-                    <strong>Name</strong>: <%= user.local.name %><br>
-                    <strong>id</strong>: <%= user._id %><br>
-                    <strong>email</strong>: <%= user.local.email %><br>
-                    <strong>password</strong>: <%= user.local.password %>
+                    <!-- <strong>Name</strong>: <%= user.local.name %><br> -->
+                    <!-- <strong>id</strong>: <%= user._id %><br> -->
+                    <strong>Email</strong>: <%= user.local.email %><br>
+                    <!-- <strong>password</strong>: <%= user.local.password %> -->
                 </p>
 
             <% } %>

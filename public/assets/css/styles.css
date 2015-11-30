@@ -1,10 +1,12 @@
 body {
   color: white;
   background-color: black;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 h1 {
     font-family: 'Helvetica Neue', sans-serif;
+    color: white
 }
 
 h2 {
@@ -87,6 +89,10 @@ p {
   margin-top: 150px
 }
 
+.well {
+  color: black;
+  text-align: center;
+}
 
 /*#globe-container {
   margin-left: auto;
@@ -105,7 +111,7 @@ p {
   text-align: center;
 }
 
-.overlay{
+/*.overlay{
  display:none;
 }
 
@@ -132,9 +138,9 @@ p {
  top: 40%;
  font-family: 'Helvetica Neue', sans-serif;
  transform: translateY(-50%);*/
-}
+/*}*/
 
-#overlay-background {
+/*#overlay-background {
  position: absolute;
  font-family: 'Helvetica Neue', sans-serif;
  top: 0;
@@ -143,4 +149,4 @@ p {
  height: 100%;
  z-index: 10;
  background-color: rgba(0,0,0,0.5);
-}
+}*/
